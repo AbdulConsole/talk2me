@@ -1,0 +1,112 @@
+
+    /* Navbar Styles */
+    .navbar {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 20px 0;
+    }
+    
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+    }
+    
+    .nav-links ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+    
+    .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+    
+    .nav-cta {
+        margin-left: 30px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .mobile-menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: var(--text);
+        transition: all 0.3s ease;
+    }
+    
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .nav-links {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            transform: translateY(-150%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .nav-links ul {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .nav-cta {
+            margin: 20px 0 0;
+            display: block;
+            text-align: center;
+        }
+        
+        .mobile-menu-toggle {
+            display: flex;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
