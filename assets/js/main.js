@@ -1,12 +1,4 @@
-// Form submission for eBook download
-        document.getElementById('ebook-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            alert(`Thank you! Your guide has been sent to ${email}. Check your inbox.`);
-            this.reset();
-        });
-        
-        // Smooth scrolling for anchor links
+// Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -20,14 +12,14 @@
         const testimonials = [
             {
                 quote: "After my divorce, I didn't recognize myself anymore. My coach helped me rebuild my confidence and discover new passions I never would have considered before.",
-                author: "Seun, 42"
+                author: "Seun, 26"
             },
             {
-                quote: "At 58, I was terrified to change careers. My coach helped me see my transferable skills and I'm now working in nonprofit—my dream job!",
-                author: "Godpower, 32"
+                quote: "At 25, I was terrified to change careers. My coach helped me see my transferable skills and I'm now working in nonprofit—my dream job!",
+                author: "Godpower, 27"
             },
             {
-                quote: "Fresh out of college, I was paralyzed by options. The decision-making framework I learned gave me confidence to pursue design.",
+                quote: "Fresh out of University, I was paralyzed by options. The decision-making framework I learned gave me confidence to pursue design.",
                 author: "Chidinma, 24"
             }
         ];
@@ -44,7 +36,17 @@
         }
         
         setInterval(rotateTestimonial, 5000);
-        
-        // Mobile menu toggle would go here in production
-        
-        
+
+// Offset resource web location by 50px
+document.getElementById('scrollToResources').addEventListener('click', function(e) {
+    e.preventDefault(); // prevent default jump
+    const target = document.getElementById('resources');
+    const offset = 50; // pixels to scroll lower
+
+    const topPos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: topPos,
+      behavior: 'smooth'
+    });
+  });
