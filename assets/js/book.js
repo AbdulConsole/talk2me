@@ -17,6 +17,6 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
 ⏰ *Preferred Time:* ${time}
 📝 *Message:* ${message || 'N/A'}`;
 
-      const whatsappURL = `https://wa.me/2348103575377?text=${encodeURIComponent(text)}`;
+      const whatsappURL = `https://wa.me/2349026331952?text=${encodeURIComponent(text)}`;
       window.open(whatsappURL, '_blank');
     });
